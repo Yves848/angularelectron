@@ -1,1 +1,16 @@
-<p>fichier works!</p>
+<h1>Fichiers</h1>
+<label for="chemin">Répertoire</label>
+<input type="text" name="repert" id="repert" [(ngModel)]="repertoire">
+<button (click)="listfiles()" mat-raised-button color="primary">Liste des fichiers</button>
+<button (click)="select()" mat-raised-button color="primary">select af04</button>
+<div *ngIf="results.length > 0">
+  <p *ngFor="let result of results">
+    {{result}}
+  </p>
+</div>
+<div *ngIf="rows.length > 0">
+  <p>{{rows.length}}</p>
+  <p *ngFor="let row of rows">
+    nom : {{row.cnom}} prenom : {{row.cprenom}}
+  </p>
+</div>
