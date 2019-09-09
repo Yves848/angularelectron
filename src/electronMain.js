@@ -42,12 +42,12 @@ function createWindow() {
       myConsole.log('test', jData);
       if (jData.type === "dir") {
         myConsole.log('dir');
-        let files = fs.readdirSync(jData.path);
+        const files = fs.readdirSync(jData.path);
         w.send(JSON.stringify({ type: 'dir', data: [...files] }));
       }
       if (jData.type === "select") {
         myConsole.log('select');
-        let rows = await selectaf04();
+        const rows = await selectaf04();
         w.send(JSON.stringify({ type: 'select', data: [...rows] }));
       }
 
